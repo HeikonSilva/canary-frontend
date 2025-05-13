@@ -4,7 +4,7 @@ import { NavLink } from 'react-router'
 export default function ChatsButton() {
   return (
     <NavLink to={'#'}>
-      <button className="hover:bg-amber-100 px-4 flex w-full gap-4 py-2 items-center rounded-2xl">
+      <button className="hover:bg-cyan-100 px-4 flex w-full gap-4 py-2 items-center rounded-2xl">
         <div className="bg-white p-2 rounded-full">
           <User />
         </div>

@@ -1,4 +1,4 @@
-import SearchFilterButtons from '../SearchFilterButton'
+import SearchFilterButtons from '../SearchFilterButtons'
 
 export default function SearchSection() {
   return (
