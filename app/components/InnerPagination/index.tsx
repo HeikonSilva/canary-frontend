@@ -1,7 +1,6 @@
 import Header from './components/Header'
 import SearchSection from './components/SearchSection'
 import ChatsList from './components/ChatsList'
-import { Outlet } from 'react-router'
 
 export default function InnerPagination() {
   return (
@@ -11,7 +10,6 @@ export default function InnerPagination() {
         <SearchSection />
         <ChatsList />
       </div>
-      <Outlet />
     </div>
   )
 }
