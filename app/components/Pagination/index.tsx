@@ -12,27 +12,27 @@ export default function Pagination() {
     <div>
       <nav className="flex flex-col gap-4 p-4 w-16 h-screen bg-cyan-200">
         <NavLink to={'#'}>
-          <div className="hover:bg-cyan-50 p-1 rounded-full aspect-square">
+          <div className="hover:bg-cyan-50 p-1 rounded-full cursor-pointer aspect-square">
             <MessageSquareText />
           </div>
         </NavLink>
         <NavLink to={'#'}>
-          <div className="hover:bg-cyan-50 p-1 rounded-full aspect-square">
+          <div className="hover:bg-cyan-50 p-1 rounded-full cursor-pointer aspect-square">
             <CircleDotDashed />
           </div>
         </NavLink>
         <NavLink to={'#'}>
-          <div className="hover:bg-cyan-50 p-1 rounded-full aspect-square">
+          <div className="hover:bg-cyan-50 p-1 rounded-full cursor-pointer aspect-square">
             <MessageCircleMore />
           </div>
         </NavLink>
         <NavLink to={'#'}>
-          <div className="hover:bg-cyan-50 p-1 rounded-full aspect-square">
+          <div className="hover:bg-cyan-50 p-1 rounded-full cursor-pointer aspect-square">
             <UsersRound />
           </div>
         </NavLink>
         <NavLink to={'#'}>
-          <div className="hover:bg-cyan-50 p-1 rounded-full aspect-square">
+          <div className="hover:bg-cyan-50 p-1 rounded-full cursor-pointer aspect-square">
             <Settings />
           </div>
         </NavLink>
