@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './global.css'
 import Layout from './layout'
 import Home from './Home'
-import Conversation from './Conversation'
+import Servers from './Servers'
 import Landing from './Landing'
 import AuthLayout from './authLayout'
 import SignUp from './SignUp'
@@ -21,7 +21,7 @@ createRoot(document.getElementById('root')!).render(
       </Route>
       <Route element={<Layout />}>
         <Route path="home" element={<Home />} />
-        <Route path="conversations" element={<Conversation />} />
+        <Route path="servers" element={<Servers />} />
       </Route>
     </Routes>
   </BrowserRouter>

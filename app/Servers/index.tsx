@@ -3,21 +3,20 @@ import { Input } from '@/components/ui/input'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { motion } from 'motion/react'
 
-export default function Conversation() {
+export default function Servers() {
   return (
-    <div className="h-full w-full flex flex-row ">
+    <div className="h-full w-full flex flex-row">
       <ScrollArea className="w-18 h-full">
         <div className="space-y-4 m-2">
-          {Array.from({ length: 100 }).map((_, idx) => (
+          {Array.from({ length: 20 }).map((_, idx) => (
             <motion.div
               key={idx}
               initial={{ x: -25, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
+              animate={{ x: 0, opacity: 1, transition: { delay: 0.1 * idx } }}
               whileHover={{ scale: 1.1 }}
-              transition={{ delay: 0.05 }}
               className="cursor-pointer"
             >
-              <Avatar>
+              <Avatar className="pointer-events-none select-none">
                 <AvatarImage src={`https://github.com/user${idx + 1}.png`} />
                 <AvatarFallback>{`U${idx + 1}`}</AvatarFallback>
               </Avatar>
@@ -32,19 +31,37 @@ export default function Conversation() {
           </div>
           <ScrollArea className="h-[calc(100%-3.25rem)] w-full">
             <div className="space-y-4 m-4">
-              {Array.from({ length: 10 }).map((_, idx) => (
-                <div className="space-y-2" key={idx}>
-                  <h2 className="text-sm font-semibold">Categoria</h2>
-                  {Array.from({ length: 5 }).map((_, idx) => (
-                    <div
-                      key={idx}
-                      className="w-full rounded-lg hover:bg-accent py-2 px-2 flex flex-row gap-2 transition-colors"
-                    >
-                      <h1>Canal</h1>
-                    </div>
-                  ))}
-                </div>
-              ))}
+              {Array.from({ length: 10 }).map((_, pidx) => {
+                const parentDelay = pidx * (0.1 + 5 * 0.1) // 0.1s for parent + 5 children * 0.2s each
+                return (
+                  <motion.div
+                    initial={{ x: -40, opacity: 0 }}
+                    animate={{
+                      x: 0,
+                      opacity: 1,
+                      transition: { delay: parentDelay },
+                    }}
+                    className="space-y-2"
+                    key={pidx}
+                  >
+                    <h2 className="text-sm font-semibold">Categoria</h2>
+                    {Array.from({ length: 5 }).map((_, idx) => (
+                      <motion.div
+                        initial={{ x: -40, opacity: 0 }}
+                        animate={{
+                          x: 0,
+                          opacity: 1,
+                          transition: { delay: parentDelay + 0.1 + 0.1 * idx },
+                        }}
+                        key={idx}
+                        className="w-full rounded-lg hover:bg-accent py-2 px-2 flex flex-row gap-2 transition-colors"
+                      >
+                        <h1>Canal</h1>
+                      </motion.div>
+                    ))}
+                  </motion.div>
+                )
+              })}
             </div>
           </ScrollArea>
         </div>
@@ -57,7 +74,13 @@ export default function Conversation() {
               <ScrollArea className="w-full overflow-y-scroll flex-1">
                 <div className="space-y-4">
                   {Array.from({ length: 15 }).map((_, idx) => (
-                    <div
+                    <motion.div
+                      initial={{ x: -40, opacity: 0 }}
+                      animate={{
+                        x: 0,
+                        opacity: 1,
+                        transition: { delay: 0.1 * idx },
+                      }}
                       className="flex flex-row hover:bg-accent p-2 gap-2 transition-colors"
                       key={idx}
                     >
@@ -74,7 +97,7 @@ export default function Conversation() {
                         </div>
                         <h2>Mensagem</h2>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </ScrollArea>
@@ -97,9 +120,13 @@ export default function Conversation() {
                     {Array.from({ length: 5 }).map((_, idx) => (
                       <div
                         key={idx}
-                        className="w-full rounded-lg hover:bg-accent py-2 px-2 flex flex-row gap-2 transition-colors"
+                        className="w-full items-center rounded-lg hover:bg-accent py-2 px-2 flex flex-row gap-2 transition-colors"
                       >
-                        <h1>Canal</h1>
+                        <Avatar className="size-8">
+                          <AvatarImage src="https://github.com/shadcn.png" />
+                          <AvatarFallback>{`Msg${idx + 1}`}</AvatarFallback>
+                        </Avatar>
+                        <h1>Membro</h1>
                       </div>
                     ))}
                   </div>
@@ -108,9 +135,13 @@ export default function Conversation() {
                     {Array.from({ length: 10 }).map((_, idx) => (
                       <div
                         key={idx}
-                        className="w-full rounded-lg hover:bg-accent py-2 px-2 flex flex-row gap-2 transition-colors"
+                        className="w-full items-center rounded-lg hover:bg-accent py-2 px-2 flex flex-row gap-2 transition-colors"
                       >
-                        <h1>Canal</h1>
+                        <Avatar className="size-8">
+                          <AvatarImage src="https://github.com/shadcn.png" />
+                          <AvatarFallback>{`Msg${idx + 1}`}</AvatarFallback>
+                        </Avatar>
+                        <h1>Membro</h1>
                       </div>
                     ))}
                   </div>

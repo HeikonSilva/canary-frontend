@@ -5,7 +5,12 @@ import Canary from './components/ui/logo'
 export default function Layout() {
   return (
     <div className="h-screen w-screen p-4">
-      <div className="flex flex-col justify-center w-full h-full rounded-2xl border-zinc-200 border-2 shadow-2xl">
+      <motion.div
+        initial={{ opacity: 0, y: -50, scale: 1.05 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ type: 'spring', stiffness: 80 }}
+        className="flex flex-col justify-center w-full h-full rounded-2xl border-zinc-200 border-2 shadow-2xl"
+      >
         <div className="w-full flex justify-center">
           <motion.div
             initial={{ opacity: 0, y: -50 }}
@@ -20,7 +25,7 @@ export default function Layout() {
         <div className="w-full h-full overflow-y-hidden">
           <Outlet />
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }
