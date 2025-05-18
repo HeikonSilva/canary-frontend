@@ -1,22 +1,26 @@
-import HeaderActions from './components/HeaderActions'
-import Message from './components/Message'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { motion } from 'motion/react'
 
 export default function Conversation() {
   return (
-    <div className="h-[calc(100vh-4rem)] w-full">
-      <HeaderActions />
-      <div className="p-4 bg-cyan-700 h-full">
-        <div className=" flex flex-col h-full w-full p-2 bg-cyan-600 rounded-2xl">
-          <div className="flex flex-col gap-4 h-full overflow-y-scroll">
-            {Array.from({ length: 16 }).map((_, idx) => (
-              <Message key={idx} />
-            ))}
-          </div>
-          <div className="w-full h-24 rounded-2xl bg-cyan-800">
-            <input type="text" className="p-2 w-full h-full text-white" />
-          </div>
-        </div>
+    <ScrollArea className="w-18 h-full grid grid-cols-1 order-1">
+      <div className="space-y-4 m-2">
+        {Array.from({ length: 100 }).map((_, idx) => (
+          <motion.div
+            initial={{ x: -25, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            whileHover={{ scale: 1.1 }}
+            transition={{ delay: 0.05 }}
+            className="cursor-pointer"
+          >
+            <Avatar key={idx}>
+              <AvatarImage src={`https://github.com/user${idx + 1}.png`} />
+              <AvatarFallback>{`U${idx + 1}`}</AvatarFallback>
+            </Avatar>
+          </motion.div>
+        ))}
       </div>
-    </div>
+    </ScrollArea>
   )
 }
