@@ -1,5 +1,5 @@
 import { Link, Outlet } from 'react-router'
-import Canary from './components/ui/logo'
+import Canary from '../components/ui/logo'
 import { motion } from 'motion/react'
 
 export default function AuthLayout() {

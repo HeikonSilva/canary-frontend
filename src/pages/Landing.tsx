@@ -1,5 +1,5 @@
-import { Button } from '@/components/ui/button'
-import Canary from '@/components/ui/logo'
+import { Button } from '../components/ui/button'
+import Canary from '../components/ui/logo'
 import { motion } from 'motion/react'
 import { Link } from 'react-router'
 

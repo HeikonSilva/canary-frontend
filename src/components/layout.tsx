@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
 import { Outlet } from 'react-router'
-import Canary from './components/ui/logo'
+import Canary from './ui/logo'
 
 export default function Layout() {
   return (

@@ -1,14 +1,14 @@
 import { BrowserRouter, Routes, Route } from 'react-router'
 import { createRoot } from 'react-dom/client'
 import './global.css'
-import Layout from './layout'
-import Home from './Home'
-import Servers from './Servers'
-import Landing from './Landing'
-import AuthLayout from './authLayout'
-import SignUp from './SignUp'
-import SignIn from './SignIn'
-import ForgotPassord from './ForgotPassword'
+import Layout from './components/layout'
+import Home from './pages/Home'
+import Servers from './pages/Servers'
+import Landing from './pages/Landing'
+import AuthLayout from './components/authLayout'
+import SignUp from './pages/SignUp'
+import SignIn from './pages/SignIn'
+import ForgotPassord from './pages/ForgotPassword'
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>

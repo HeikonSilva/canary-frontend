@@ -1,4 +1,4 @@
-import Canary from '@/components/ui/logo'
+import Canary from '../components/ui/logo'
 
 export default function Home() {
   return (
