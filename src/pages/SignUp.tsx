@@ -15,7 +15,7 @@ export default function SignUp() {
       >
         Sign Up
       </motion.h1>
-      <Link to={'/signin'} replace>
+      <Link to={'/sign-in'} replace>
         <motion.span
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -52,7 +52,7 @@ export default function SignUp() {
             transition={{ duration: 0.325, delay: 0.4 }}
           >
             <Label htmlFor="email" className="mb-4">
-              Email
+              Display Name <span className="text-zinc-500">(Optional)</span>
             </Label>
           </motion.div>
           <motion.div

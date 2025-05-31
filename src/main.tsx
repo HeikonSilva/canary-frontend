@@ -17,9 +17,9 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route index element={<Landing />} />
         <Route element={<AuthLayout />}>
-          <Route path="signup" element={<SignUp />} />
-          <Route path="signin" element={<SignIn />} />
-          <Route path="forgotpassword" element={<ForgotPassord />} />
+          <Route path="sign-up" element={<SignUp />} />
+          <Route path="sign-in" element={<SignIn />} />
+          <Route path="forgot-password" element={<ForgotPassord />} />
         </Route>
         <Route element={<Layout />}>
           <Route path="home" element={<Home />} />

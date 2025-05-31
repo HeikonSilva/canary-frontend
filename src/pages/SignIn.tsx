@@ -15,7 +15,7 @@ export default function SignIn() {
       >
         Sign In
       </motion.h1>
-      <Link to={'/signup'} replace>
+      <Link to={'/sign-up'} replace>
         <motion.span
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ export default function SignIn() {
           >
             <Input id="password" type="password" placeholder="Password" />
           </motion.div>
-          <Link to={'/forgotpassword'} replace>
+          <Link to={'/forgot-password'} replace>
             <motion.span
               initial={{ opacity: 0, y: -50 }}
               animate={{ opacity: 1, y: 0 }}

@@ -9,17 +9,21 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "shadcn": "pnpm dlx shadcn@latest",
-    "dev-server": "pnpm tsx --watch ./src/server/server.ts"
+    "openapi-ts": "tsx ./scripts/apigen.ts"
   },
   "dependencies": {
     "@fastify/cors": "^11.0.1",
     "@fastify/swagger": "^9.5.1",
     "@fastify/swagger-ui": "^5.2.2",
+    "@hey-api/client-fetch": "^0.11.0",
     "@radix-ui/react-avatar": "^1.1.9",
     "@radix-ui/react-label": "^2.1.6",
     "@radix-ui/react-scroll-area": "^1.2.8",
+    "@radix-ui/react-select": "^2.2.5",
     "@radix-ui/react-slot": "^1.2.2",
     "@tailwindcss/vite": "^4.1.6",
+    "@tanstack/react-query": "^5.79.0",
+    "c12": "^3.0.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "fastify": "^5.3.3",
@@ -35,6 +39,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
+    "@hey-api/openapi-ts": "^0.69.1",
     "@types/node": "^22.15.18",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
